@@ -1,0 +1,13 @@
+customer,plan,start_date,status,last_order_date,monthly_price
+Ava Martinez,Glow Monthly,2026-04-05,active,2026-10-29,29
+Liam Chen,Protein+,2026-05-04,active,2026-10-24,49
+Sophia Rao,Meal Kit,2026-07-28,active,2026-10-14,79
+Noah Kim,Pet Food,2026-06-14,active,2026-10-08,39
+Mia Patel,Glow Monthly,2026-09-22,active,2026-10-10,29
+Ethan Wright,Protein+,2026-01-05,active,2026-09-29,49
+Isla Singh,Meal Kit,2026-07-04,active,2026-09-24,79
+Lucas Meyer,Pet Food,2026-08-28,active,2026-09-21,39
+Amara Osei,Glow Monthly,2026-04-15,active,2026-09-10,29
+Jonas Weber,Protein+,2026-08-03,active,2026-08-26,49
+Priya Nair,Meal Kit,2026-05-24,paused,2026-10-02,79
+Tom Becker,Pet Food,2026-07-14,cancelled,2026-08-13,39
