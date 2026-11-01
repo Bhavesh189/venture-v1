@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — Churn-Retention v1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Retention<span>Dashboard</span> <span class="pill">v1 · local demo</span></div>
+  <nav><a href="index.html">Home</a><a href="dashboard.html" class="btn">Dashboard</a></nav>
+</header>
+<main>
+  <h1>Churn-risk dashboard</h1>
+  <p style="color:var(--muted)">Demo data on load. Upload a CSV to score your own subscribers. Scoring is rule-based (v1 rules) and runs entirely in the browser.</p>
+
+  <div class="toolbar">
+    <label class="filebtn" for="csv-file">📤 Upload subscribers CSV</label>
+    <input type="file" id="csv-file" accept=".csv,text/csv">
+    <button id="btn-demo" class="primary">Reload demo data</button>
+    <a href="demo-subscribers.csv" download><button>Download sample CSV</button></a>
+    <span id="upload-msg" style="color:var(--muted)"></span>
+  </div>
+  <p style="color:var(--muted); font-size:13px">CSV columns: <b>customer, plan, start_date, status, last_order_date</b> (+ optional <b>monthly_price</b>). <span id="ref-date"></span> · <span id="price-note"></span></p>
+
+  <div class="cards">
+    <div class="stat"><div class="num" id="stat-total">—</div><div class="lbl">Subscribers</div></div>
+    <div class="stat"><div class="num" id="stat-high">—</div><div class="lbl">High risk</div></div>
+    <div class="stat"><div class="num" id="stat-medium">—</div><div class="lbl">Medium risk</div></div>
+    <div class="stat"><div class="num" id="stat-healthy">—</div><div class="lbl">Healthy</div></div>
+    <div class="stat"><div class="num" id="stat-mrr">—</div><div class="lbl">MRR at risk (High + Medium)</div></div>
+    <div class="stat"><div class="num" id="stat-recoverable">—</div><div class="lbl">Est. recoverable / mo (20% save rate)</div></div>
+  </div>
+
+  <h2>Priority actions</h2>
+  <ul class="actions" id="actions-list"></ul>
+
+  <h2>Subscribers</h2>
+  <div class="toolbar">
+    <span style="color:var(--muted)">Filter:</span>
+    <button data-filter="All" class="active">All</button>
+    <button data-filter="High">High</button>
+    <button data-filter="Medium">Medium</button>
+    <button data-filter="Watch">Watch</button>
+    <button data-filter="Healthy">Healthy</button>
+    <button data-filter="Paused">Paused</button>
+    <button data-filter="Churned">Churned</button>
+  </div>
+  <div class="card" style="padding:0; overflow-x:auto">
+    <table>
+      <thead><tr><th>Customer</th><th>Plan</th><th>Start</th><th>Status</th><th>Last order</th><th>Gap</th><th>Risk</th><th>Reason</th><th>Suggested action</th></tr></thead>
+      <tbody id="risk-rows"></tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <b>ROI summary, explained:</b> MRR at risk = monthly price of every High- and Medium-risk subscriber.
+    Recoverable value = 20% of MRR at risk — a labeled assumption, not a promise. Real save rates come from measuring actual win-back campaigns (Phase 2).
+    Paused and cancelled subscribers are excluded from both numbers.
+  </div>
+</main>
+<footer>Local v1 build · No accounts · No data leaves the browser · No paid services</footer>
+<script src="app.js"></script>
+</body>
+</html>
