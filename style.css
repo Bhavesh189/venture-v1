@@ -54,5 +54,12 @@ th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spa
 .churned { background: #27272a; color: #d4d4d8; }
 .paused { background: #2e1065; color: #c4b5fd; }
 ul.actions li { margin: 8px 0; }
+/* waitlist (landing page; UI only in v1 — see TODO in index.html) */
+.waitlist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin: 24px 0; }
+.waitlist h2 { margin-top: 0; }
+.waitlist form { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.waitlist input[type=email] { background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 11px 16px; font-size: 15px; min-width: 260px; flex: 1; }
+.waitlist p { color: var(--muted); font-size: 14px; }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px; }
 @media (max-width: 800px) { .grid3, .cards { grid-template-columns: 1fr 1fr; } .hero h1 { font-size: 30px; } }
