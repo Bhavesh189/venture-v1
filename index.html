@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Churn-Retention Dashboard for Subscription Brands — v1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Retention<span>Dashboard</span> <span class="pill">v1 · local demo</span></div>
+  <nav><a href="index.html">Home</a><a href="dashboard.html" class="btn">Open dashboard</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <span class="pill">Built for Shopify subscription brands · beauty · supplements · meal kits · pet food</span>
+    <h1>See which subscribers are about to churn — before they do.</h1>
+    <p>Upload a subscriber list, get a transparent churn-risk flag for every customer, and see exactly which win-back actions to take first — plus what that saved revenue is worth each month.</p>
+    <a class="cta" href="dashboard.html">Open the dashboard →</a>
+  </section>
+
+  <div class="grid3">
+    <div class="card"><h3>1 · Upload</h3><p>Drop in a simple subscribers CSV: customer, plan, start date, status, last order date. No integrations needed in v1.</p></div>
+    <div class="card"><h3>2 · See risk</h3><p>Every subscriber gets a High / Medium / Watch / Healthy flag with a plain-English reason. Rules are public, not a black box.</p></div>
+    <div class="card"><h3>3 · Act + measure</h3><p>A prioritized action list and an ROI summary: MRR at risk, and what saving 20% of it is worth per month.</p></div>
+  </div>
+
+  <h2>How v1 scores churn risk (transparent rules)</h2>
+  <div class="card">
+    <p>Reference date = latest last-order date in the uploaded file (demo data uses today).</p>
+    <ul>
+      <li><b>Healthy</b> — ordered within 14 days</li>
+      <li><b>Watch</b> — no order in 15–29 days</li>
+      <li><b>Medium</b> — no order in 30–45 days</li>
+      <li><b>High</b> — no order in 45+ days</li>
+      <li><b>New-subscriber bump</b> — tenure under 60 days with a 15+ day gap moves one tier up</li>
+      <li><b>Paused / Churned</b> — shown separately, never counted as "at risk"</li>
+    </ul>
+    <p>These are v1 rules. Later phases replace them with learned models — but the dashboard will always show <i>why</i> a customer was flagged.</p>
+  </div>
+
+  <div class="note">
+    <b>v1 honesty box:</b> this build runs 100% locally with demo data and rule-based scoring.
+    Shopify / Recharge / Klaviyo connections, live data sync, AI win-back campaigns, and billing are <b>stubbed</b> — see README.md for what is real, what is stubbed, and the exact steps to package this as a Shopify app later.
+  </div>
+
+  <h2>Try it</h2>
+  <p>Open the dashboard — it loads with realistic demo data. Then upload your own CSV (or <a href="demo-subscribers.csv" download>download the sample CSV</a>) to see scoring on your data.</p>
+  <a class="cta" href="dashboard.html">Open the dashboard →</a>
+</main>
+<footer>Local v1 build · No accounts · No data leaves the browser · No paid services</footer>
+</body>
+</html>
