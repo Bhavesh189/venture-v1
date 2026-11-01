@@ -3,7 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Churn-Retention Dashboard for Subscription Brands — v1</title>
+<title>RetentionAI — Churn-Risk Dashboard for Shopify Subscription Brands</title>
+<meta name="description" content="Free churn-risk dashboard for Shopify subscription brands. Upload a subscribers CSV and see which customers are about to churn — scored in your browser, no signup, no data leaves your machine.">
+<meta property="og:title" content="RetentionAI — See which subscribers are about to churn">
+<meta property="og:description" content="Free churn-risk dashboard for Shopify subscription brands: beauty, supplements, meal kits, pet food. CSV upload, transparent rules, browser-local scoring.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bhavesh189.github.io/venture-v1/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RetentionAI — See which subscribers are about to churn">
+<meta name="twitter:description" content="Free churn-risk dashboard for Shopify subscription brands. CSV upload, transparent rules, browser-local scoring.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +23,8 @@
   <section class="hero">
     <span class="pill">Built for Shopify subscription brands · beauty · supplements · meal kits · pet food</span>
     <h1>See which subscribers are about to churn — before they do.</h1>
-    <p>Upload a subscriber list, get a transparent churn-risk flag for every customer, and see exactly which win-back actions to take first — plus what that saved revenue is worth each month.</p>
+    <p>If you sell subscriptions on Shopify, this tells you which customers are quietly slipping away — and what to do about each one. Upload a subscriber list, get a transparent churn-risk flag for every customer, and see which win-back actions to take first, plus what that saved revenue is worth each month.</p>
+    <p><b>Free · No signup · Your data never leaves your browser.</b></p>
     <a class="cta" href="dashboard.html">Open the dashboard →</a>
   </section>
 
@@ -47,6 +56,24 @@
   <h2>Try it</h2>
   <p>Open the dashboard — it loads with realistic demo data. Then upload your own CSV (or <a href="demo-subscribers.csv" download>download the sample CSV</a>) to see scoring on your data.</p>
   <a class="cta" href="dashboard.html">Open the dashboard →</a>
+
+  <section class="waitlist" id="waitlist">
+    <h2>Get the Shopify app first</h2>
+    <p>We are turning this dashboard into a free Shopify app with live store sync — no CSV uploads, no manual work. Join the waitlist and we will tell you the day it lands in the Shopify App Store.</p>
+    <!-- TODO: waitlist form is UI only in v1 — NOT wired to any backend or form service. Connect a form backend before collecting real emails. -->
+    <form id="waitlist-form" action="#" method="post">
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit" class="primary">Join the waitlist</button>
+    </form>
+    <p id="waitlist-msg">Demo only: this form is not connected to any service yet, so no email is collected or stored.</p>
+  </section>
+  <script>
+    // Waitlist is UI only (see TODO above): never send or store anything.
+    document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('waitlist-msg').textContent = 'Thanks! This demo waitlist is not wired up yet (TODO: connect a form backend) — no email was sent or stored.';
+    });
+  </script>
 </main>
 <footer>Local v1 build · No accounts · No data leaves the browser · No paid services</footer>
 </body>
